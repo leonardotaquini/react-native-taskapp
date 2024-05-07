@@ -1,13 +1,12 @@
 import { View, Text } from "react-native"
+import { Tarea } from "../interfaces/tarea.interface";
 
-type TareaModelo = {
-    titulo: string,
-    descripcion: string
-}
 
-const Tarea = ( { titulo, descripcion } : TareaModelo ) => {
+
+const Tarea = ( { tarea } : { tarea: Tarea } ) => {
+  const { titulo, descripcion, id } = tarea;
   return (
-    <View>
+    <View key={ id }>
       <Text> { titulo } </Text>
       <Text> { descripcion } </Text>
     </View>

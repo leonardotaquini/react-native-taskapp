@@ -13,12 +13,12 @@ export const TareaReducer = (state: TareaState, action: TareaAction) => {
         case actionsTypes.ELIMINAR_TAREA:
             return {
                 ...state,
-                // tareas: state.tareas.filter(tarea => tarea.id !== action.payload)
+                tareas: state.tareas.filter(tarea => tarea.id !== action.payload.id)
             }
         case actionsTypes.ACTUALIZAR_TAREA:
             return {
                 ...state,
-                // tareas: state.tareas.map(tarea => tarea.id === action.payload.id ? action.payload : tarea)
+                tareas: state.tareas.map(tarea => tarea.id === action.payload.id ? action.payload : tarea)
             }
         default:
             return state;

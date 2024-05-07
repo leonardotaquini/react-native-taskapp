@@ -7,20 +7,21 @@ export interface TareaState {
 export interface TareasContextType {   
     tareas: Tarea[];
     agregarTarea: (tarea: Tarea) => void;
-    eliminarTarea: (id: number) => void;
+    eliminarTarea: ( tarea: Tarea) => void;
     actualizarTarea: (tarea: Tarea) => void;
 }
 
 export interface Tarea {
     id: number;
-    texto: string;
+    descripcion: string;
     completada: boolean;
+    titulo:string
 
 }
 
 export type TareaAction = {
     type: string,
-    payload: Tarea | number
+    payload: Tarea
 
 }
 

@@ -1,16 +1,13 @@
-import {  Reducer, useReducer } from "react";
+import { useReducer } from "react";
 import { TareasContext } from "./tareas.context"
 import { TareaReducer } from "./tareaReducer";
-import { Tarea, TareaStateProps, actionsTypes } from "../interfaces/tarea.interface";
+import { Tarea, TareaState as TareaStateType, TareaStateProps, actionsTypes } from "../interfaces/tarea.interface";
 
 
- interface InitialState{
-    tareas: Tarea[]
- }
 
 export const TareaState = ({ children }: TareaStateProps ) => {
     
-   const initialState: InitialState = {
+   const initialState: TareaStateType = {
         tareas: []
    }
 
@@ -22,10 +19,10 @@ export const TareaState = ({ children }: TareaStateProps ) => {
             payload: tarea
         });
     }
-    const eliminarTarea = (id: number) => {
+    const eliminarTarea = ( tarea: Tarea) => {
         return dispatch({
             type: actionsTypes.ELIMINAR_TAREA,
-            payload: id
+            payload: tarea
         });
     }
 
