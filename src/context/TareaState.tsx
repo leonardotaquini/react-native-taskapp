@@ -8,7 +8,20 @@ import { Tarea, TareaState as TareaStateType, TareaStateProps, actionsTypes } fr
 export const TareaState = ({ children }: TareaStateProps ) => {
     
    const initialState: TareaStateType = {
-        tareas: []
+        tareas: [
+            {
+                id: 1,
+                descripcion: 'Hacer toda la tarea de React Native',
+                completada: false,
+                titulo: 'Estudiar React Native'
+            },
+            {
+                id: 2,
+                descripcion: 'Hacer toda la tarea de React Native',
+                completada: false,
+                titulo: 'Estudiar React Native'
+            }
+        ]
    }
 
     const [state, dispatch] = useReducer(TareaReducer, initialState);

@@ -8,7 +8,7 @@ export const FormularioTarea = () => {
   const { agregarTarea } = useContext(TareasContext);
 
   const [tarea, setTarea] = useState<Tarea>({
-    id: new Date().getTime(),
+    id: 0,
     titulo: '',
     completada: false,
     descripcion: ''
@@ -17,6 +17,10 @@ export const FormularioTarea = () => {
 
 
   const handleSubmit = () => {
+    setTarea({
+      ...tarea,
+      id: new Date().getTime(),
+    });
     agregarTarea( tarea );
   }
 
